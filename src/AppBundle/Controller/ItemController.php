@@ -24,7 +24,6 @@ class ItemController extends Controller
      */
     public function itemAction(Request $request)
     {
-
         $item = new Item;
         $form = $this->createFormBuilder()
             ->add('name', TextType::class, array('label' => 'Item name'))

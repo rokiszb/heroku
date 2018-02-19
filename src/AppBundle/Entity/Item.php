@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use DateTime;
+use Symfony\Component\Validator\Constraints\GreaterThan;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ItemRepository")
@@ -65,9 +66,8 @@ class Item
     private $description;
 
     /**
-     * @Assert\NotBlank()
      * @Assert\GreaterThan(
-     *     value = 18
+     *     value = 0
      * )
      * @ORM\Column(type="decimal", scale=2, nullable=true)
      */
