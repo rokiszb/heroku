@@ -23,7 +23,7 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Item", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Item", mappedBy="user")
      */
     private $items;
 

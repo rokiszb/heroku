@@ -15,6 +15,7 @@
         <thead>
             <tr>
                 <th>Item Name</th>
+                <th>Price</th>
                 <th>Description</th>
                 <th>Category</th>
                 <th>Created By</th>
@@ -24,6 +25,7 @@
             {% for item in items %}
             <tr>
                 <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
                 <td>{{ item.description }}</td>
                 <td>{{ item.category.title }}</td>
                 <td>{{ item.user.username }}</td>

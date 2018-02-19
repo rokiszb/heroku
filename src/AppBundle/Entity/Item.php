@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use DateTime;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ItemRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ItemRepository")
  */
 class Item
 {
@@ -21,7 +21,7 @@ class Item
     // add your own fields
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="items")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="items")
      * @ORM\JoinColumn(nullable=true)
      */
     public $user;
@@ -37,7 +37,7 @@ class Item
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="items")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category", inversedBy="items")
      * @ORM\JoinColumn(nullable=true)
      */
     private $category;

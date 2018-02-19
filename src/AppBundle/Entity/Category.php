@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CategoryRepository")
  */
 class Category
 {
@@ -25,7 +25,7 @@ class Category
     private $title;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Item", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Item", mappedBy="category")
      */
     private $items;
 

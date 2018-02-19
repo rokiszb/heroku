@@ -1,9 +1,15 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
-
+    encoders:
+        AppBundle\Entity\User:
+            algorithm: bcrypt
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
+        our_db_provider:
+            entity:
+                class: AppBundle:User
+                property: username
         in_memory:
             memory: ~
 
@@ -15,10 +21,25 @@ security:
 
         main:
             anonymous: ~
+            pattern:    ^/
             # activate different ways to authenticate
+            provider: our_db_provider
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            http_basic: ~
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
 
+            form_login:
+                login_path: login
+                check_path: login
             # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~
+            logout:
+                path:   /logout
+                target: /
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/new_item, roles: ROLE_USER }
+        - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/logout, roles: ROLE_USER }

@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Doctrine\ORM\Tools\Pagination\Paginator;
-use App\Entity\Item;
+use AppBundle\Entity\Item;
 
 class PageController extends Controller
 {

@@ -3,15 +3,16 @@
 namespace AppBundle\Repository;
 
 use AppBundle\Entity\Item;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+// use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\ORM\EntityRepository;
 
-class ItemRepository extends ServiceEntityRepository
+class ItemRepository extends EntityRepository
 {
-    public function __construct(RegistryInterface $registry)
-    {
-        parent::__construct($registry, Item::class);
-    }
+    // public function __construct(RegistryInterface $registry)
+    // {
+    //     parent::__construct($registry, Item::class);
+    // }
 
     /*
     public function findBySomething($value)

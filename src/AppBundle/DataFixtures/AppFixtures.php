@@ -11,7 +11,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use DateTime;
 
-class AppFixtures extends DoctrineFixturesBundle
+class AppFixtures extends Fixture
 {
 
     private $encoder;
@@ -49,7 +49,7 @@ class AppFixtures extends DoctrineFixturesBundle
             $item->setName('item '.$i);
             $item->setUser($user);
             $item->setDescription('Item description');
-            $item->setCategoryId($category);
+            $item->setCategory($category);
             $item->setPrice(mt_rand(10, 100));
             $dateTimeNow = new DateTime('now');
             $item->setCreatedAt($dateTimeNow);
