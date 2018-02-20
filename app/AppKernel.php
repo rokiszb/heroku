@@ -19,9 +19,9 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
         ];
 
-        if (in_array($this->getEnvironment(), array('prod'))) {
-            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
-        }
+        // if (in_array($this->getEnvironment(), array('prod'))) {
+        //     // $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+        // }
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
